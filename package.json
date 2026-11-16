@@ -1,0 +1,22 @@
+{
+  "name": "pdf-to-md-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "PDF to Markdown: upload a PDF, convert it to Markdown in-process, view and download the result.",
+  "license": "MIT",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "start": "npm start -w server",
+    "test": "npm test -w server && npm test -w web",
+    "build": "npm run build -w web",
+    "sample": "node server/assets/sample.mjs",
+    "prepare": "git config core.hooksPath .githooks || true"
+  }
+}

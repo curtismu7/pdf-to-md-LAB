@@ -1,0 +1,20 @@
+# Docker: docker compose up --build -d  ->  http://127.0.0.1:7818
+name: pdf-to-md-lab
+
+services:
+  pdf-to-md-lab:
+    restart: unless-stopped
+    build: .
+    ports:
+      - "127.0.0.1:${HOST_PORT:-7818}:7818"
+    read_only: true
+    tmpfs: ["/tmp:mode=1777,size=64m"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:7818/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      start_period: 5s
+      start_interval: 2s
+      timeout: 5s
+      retries: 3

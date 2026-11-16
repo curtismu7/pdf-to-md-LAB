@@ -1,0 +1,63 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1a1a2e;
+  background: #f5f6fa;
+}
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+h1 { font-size: 1.6rem; }
+.dropzone {
+  border: 2px dashed #b9bdd0;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+}
+.dropzone.over { border-color: #4a5df0; background: #eef1ff; }
+button.primary, .btn.primary {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  border: 0;
+  border-radius: 8px;
+  background: #4a5df0;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+button[aria-pressed] {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid #b9bdd0;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+button[aria-pressed="true"] { background: #4a5df0; border-color: #4a5df0; color: #fff; }
+.error {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background: #fdecea;
+  color: #a93226;
+}
+.code {
+  background: #1a1a2e;
+  color: #e6e8f0;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow: auto;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.preview { background: #fff; padding: 1rem 1.4rem; border: 1px solid #e2e4ee; border-radius: 8px; }
+.preview ul { margin: 0.4rem 0; }
+.stats { color: #5c5f75; font-size: 0.9rem; }
+.result-head { display: flex; align-items: center; gap: 1rem; }

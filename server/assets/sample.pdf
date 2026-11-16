@@ -1,0 +1,65 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 8 0 R /F2 9 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 615 >>
+stream
+BT /F1 12 Tf 14 TL ET
+BT /F2 20 Tf 1 0 0 1 72 740 Tm (Quarterly Report) Tj ET
+BT /F2 13 Tf 1 0 0 1 72 716 Tm (Overview) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 696 Tm (Revenue grew steadily across every region this quarter.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 680 Tm (Operating costs stayed flat while demand increased.) Tj ET
+BT /F2 13 Tf 1 0 0 1 72 656 Tm (Highlights) Tj ET
+BT /F1 11 Tf 1 0 0 1 82 636 Tm (- Signed twelve new enterprise customers.) Tj ET
+BT /F1 11 Tf 1 0 0 1 82 620 Tm (- Shipped the mobile app to general availability.) Tj ET
+BT /F1 11 Tf 1 0 0 1 82 604 Tm (- Reduced support backlog by forty percent.) Tj ET
+
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 8 0 R /F2 9 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 308 >>
+stream
+BT /F1 12 Tf 14 TL ET
+BT /F2 20 Tf 1 0 0 1 72 740 Tm (Quarterly Report) Tj ET
+BT /F2 13 Tf 1 0 0 1 72 716 Tm (Outlook) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 696 Tm (Next quarter focuses on international expansion.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 680 Tm (Hiring plans continue with a focus on customer success.) Tj ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Info /Title (sample) >>
+endobj
+8 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000923 00000 n 
+0000001059 00000 n 
+0000001418 00000 n 
+0000001467 00000 n 
+0000001537 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R /Info 7 0 R >>
+startxref
+1612
+%%EOF
