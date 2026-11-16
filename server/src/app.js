@@ -6,10 +6,16 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import { convertPdf, ConvertError, LIMITS } from './convert.js';
 
+const pkg = () => JSON.parse(fs.readFileSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../package.json'), 'utf8'));
+
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const WEB_DIST = process.env.WEB_DIST || path.resolve(HERE, '../../web/dist');
 
-// DNS-rebinding defence: the Host header must name the loopback interface.
+// DNS-rebinding defence: the Host header must name the loopback interface,
+// or one of the lab-proxy names in LAB_ALLOWED_HOSTS (comma-separated host names).
+const ALLOWED_HOSTS = new Set(String(process.env.LAB_ALLOWED_HOSTS || '')
+  .split(',').map((n) => n.trim().toLowerCase()).filter(Boolean));
+
 export function isLoopbackHost(host) {
   const h = String(host).toLowerCase().replace(/^\[|\]$/g, '');
   return h === 'localhost' || h === '::1' || /^127(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/.test(h);
@@ -17,8 +23,8 @@ export function isLoopbackHost(host) {
 
 function hostCheck(req, res, next) {
   const raw = String(req.headers.host || '');
-  const host = raw.startsWith('[') ? raw.slice(0, raw.indexOf(']') + 1) : raw.replace(/:\d+$/, '');
-  if (!isLoopbackHost(host)) {
+  const host = (raw.startsWith('[') ? raw.slice(0, raw.indexOf(']') + 1) : raw.replace(/:\d+$/, '')).toLowerCase();
+  if (!isLoopbackHost(host) && !ALLOWED_HOSTS.has(host)) {
     return res.status(403).json({ error: 'bad_host', message: 'Host must be loopback' });
   }
   next();
@@ -90,8 +96,19 @@ export function createApp() {
     }
   });
 
-  app.get('/api/download/:id', (req, res) => {
-    if (!last || last.id !== req.params.id) {
+  // GET /api/health, contract demo-health/1 (the demo shelf's docs/health-contract.md).
+  app.get('/api/health', (_req, res) => {
+    res.set('Cache-Control', 'no-store');
+    res.json({
+      schema: 'demo-health/1',
+      at: new Date().toISOString(),
+      state: 'ready',
+      runtime: 'offline',
+      demo: { id: 'pdf-to-md-lab', name: 'PDF to Markdown LAB', version: pkg().version },
+    });
+  });
+
+  app.get('/api/download/:id', (req, res) => {    if (!last || last.id !== req.params.id) {
       return res.status(404).json({ error: 'not_found', message: 'no such conversion (only the last one is kept)' });
     }
     const accept = req.headers.accept || '*/*';

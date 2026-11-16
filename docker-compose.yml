@@ -5,6 +5,8 @@ services:
   pdf-to-md-lab:
     restart: unless-stopped
     build: .
+    environment:
+      LAB_ALLOWED_HOSTS: ${LAB_ALLOWED_HOSTS:-pdf-to-md-lab.local.ping-devops.com,local.ping-devops.com}
     ports:
       - "127.0.0.1:${HOST_PORT:-7818}:7818"
     read_only: true
