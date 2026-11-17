@@ -60,8 +60,13 @@ export default function App() {
   };
 
   return (
-    <main className="app">
-      <h1>PDF to Markdown</h1>
+    <main>
+      <header className="shell-bar">
+        <span className="brand-glyph" aria-hidden="true" />
+        <span className="brand-name">PDF to Markdown</span>
+      </header>
+      <div className="app">
+        <h1>Convert a PDF</h1>
       <div
         className={`dropzone${dragOver ? " over" : ""}`}
         data-testid="dropzone"
@@ -101,9 +106,10 @@ export default function App() {
           <p className="stats" data-testid="stats">
             {result.stats.pages} pages · {result.stats.headings} headings · {result.stats.words} words · {result.stats.ms} ms
           </p>
-          <a className="btn primary" href={`/api/download/${encodeURIComponent(result.id)}`} data-testid="download">Download .md</a>
+          <a className="btn secondary" href={`/api/download/${encodeURIComponent(result.id)}`} data-testid="download">Download .md</a>
         </section>
       )}
+      </div>
     </main>
   );
 }
