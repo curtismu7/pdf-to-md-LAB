@@ -89,7 +89,8 @@ body {
   .shell-bar { padding: 0.9rem 1rem; }
 }
 
-h1 { font-size: 1.6rem; font-weight: 700; }
+h1 { font-size: 2rem; font-weight: 700; }
+body { font-size: 1.1rem; }
 
 .dropzone {
   border: 2px dashed var(--gray-500);
@@ -108,13 +109,13 @@ h1 { font-size: 1.6rem; font-weight: 700; }
 button.primary, .btn.primary {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.6rem 1.4rem;
+  padding: 0.8rem 1.8rem;
   border: 0;
   border-radius: var(--radius-md);
   background: var(--ping-red);
   color: #fff;
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
@@ -125,13 +126,13 @@ button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
 button.secondary, .btn.secondary {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.55rem 1.3rem;
+  padding: 0.7rem 1.6rem;
   border: 1px solid var(--gray-500);
   border-radius: var(--radius-md);
   background: transparent;
   color: var(--text);
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
@@ -170,7 +171,7 @@ button[aria-pressed="true"] { background: var(--ping-red); border-color: var(--p
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
   overflow: auto;
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   white-space: pre-wrap;
   word-break: break-word;
 }
@@ -181,12 +182,12 @@ button[aria-pressed="true"] { background: var(--ping-red); border-color: var(--p
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
 }
+
 .preview ul { margin: 0.4rem 0; }
 
-.stats { color: var(--text-muted); font-size: 0.9rem; }
-
+.stats { color: var(--text-muted); font-size: 1rem; }
 .result-head { display: flex; align-items: center; gap: 1rem; }
 
 a { color: var(--ping-blue); }
