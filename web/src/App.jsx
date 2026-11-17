@@ -74,15 +74,18 @@ export default function App() {
         onDragLeave={() => setDragOver(false)}
         onDrop={(e) => { e.preventDefault(); setDragOver(false); const f = e.dataTransfer.files?.[0]; if (f) pickFile(f); }}
       >
-        <p>Drag a PDF here, or browse. Max 25 MB.</p>
+        <p>Drag a PDF here, or choose a file. Max 25 MB.</p>
         <input
           ref={inputRef}
+          className="file-input"
+          id="pdf-file"
           type="file"
           accept=".pdf,application/pdf"
           data-testid="file-input"
           aria-label="Choose a PDF file"
           onChange={(e) => pickFile(e.target.files?.[0])}
         />
+        <label className="btn primary file-label" htmlFor="pdf-file">Choose PDF</label>
         {file && <p data-testid="file-name">Selected: {file.name} ({Math.ceil(file.size / 1024)} KB)</p>}
       </div>
       <button type="button" className="primary" data-testid="convert" disabled={!file || busy} onClick={onConvert}>

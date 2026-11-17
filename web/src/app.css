@@ -106,6 +106,25 @@ body { font-size: 1.1rem; }
 }
 .dropzone.over:hover { border-color: var(--ping-red-dark); }
 
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.file-input:focus-visible + .file-label {
+  outline: 2px solid var(--ping-blue);
+  outline-offset: 2px;
+}
+.file-input:focus-visible + .file-label:hover { background: var(--ping-red); }
+.file-label {
+  display: inline-block;
+  margin-top: 0.4rem;
+}
+.file-label:hover { background: var(--ping-red-dark); }
+
 button.primary, .btn.primary {
   display: inline-block;
   margin-top: 1rem;
