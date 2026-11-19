@@ -20,3 +20,5 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      # The vendored shared stylesheet must match the hash pinned when it was last re-vendored.
+      - run: bash scripts/check-ui-standard.sh
