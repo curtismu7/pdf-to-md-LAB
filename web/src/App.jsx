@@ -62,8 +62,10 @@ export default function App() {
   return (
     <main>
       <header className="shell-bar">
-        <span className="brand-glyph" aria-hidden="true" />
-        <span className="brand-name">PDF to Markdown</span>
+        <span className="shell-brand">
+          <span className="brand-glyph brand-mark" aria-hidden="true" />
+          <span className="shell-brand__name">PDF to Markdown</span>
+        </span>
       </header>
       <div className="app">
         <h1>Convert a PDF</h1>
